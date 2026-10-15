@@ -1,6 +1,9 @@
+-- SQL Server (T-SQL)
 CREATE DATABASE Library;
+GO
 USE Library;
-
+GO
+    
 CREATE TABLE Member (
     Mem_ID    INT PRIMARY KEY,
     Mem_Name  VARCHAR(50) NOT NULL,
