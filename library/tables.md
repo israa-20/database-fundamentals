@@ -3,12 +3,12 @@
 `PK` = primary key, `FK` = foreign key.
 
 ```
-Member        (Mem_ID [PK], Name, Street, City, Card_No, Issue_Dt)
+Member        (Mem_ID [PK], Mem_Name, Street, City, Card_No, Issue_Dt)
 Member_Phone  (Mem_ID [PK, FK], Phone_No [PK])
 
 Book          (ISBN [PK], Title)
 
-Author        (Author_ID [PK], Name, DOB, Website)
+Author        (Author_ID [PK], Author_Name, DOB, Website)
 Author_Phone  (Author_ID [PK, FK], Phone_No [PK])
 
 Borrow        (Mem_ID [PK, FK], ISBN [PK, FK], Loan_Dt [PK], Return_Dt)
