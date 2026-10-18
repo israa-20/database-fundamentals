@@ -165,3 +165,19 @@ HAVING COUNT(*) > (
         GROUP BY Mem_ID
     ) AS Loans_Per_Member
 );
+
+-- 20. Members with the highest number of loans
+SELECT m.Mem_ID,
+       m.Mem_Name,
+       COUNT(*) AS Loan_Count
+FROM Borrow br
+INNER JOIN Member m ON m.Mem_ID = br.Mem_ID
+GROUP BY m.Mem_ID, m.Mem_Name
+HAVING COUNT(*) = (
+    SELECT MAX(Cnt)
+    FROM (
+        SELECT COUNT(*) AS Cnt
+        FROM Borrow
+        GROUP BY Mem_ID
+    ) AS Loans_Per_Member
+);
